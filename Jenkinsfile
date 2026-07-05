@@ -59,6 +59,12 @@ pipeline{
                 '''
             }
         }
+        stage("Deploy to microk8s") {
+            steps {
+                sh "microk8s.kubectl apply -f deploy.yaml"
+            }
+        }
+        
     }
 
 }
