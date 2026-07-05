@@ -17,18 +17,18 @@ spec:
         image: replace
         imagePullPolicy: Always
         ports:
-        - containerPort: 8081
+        - containerPort: 8080
          # Adding health checks (customize the path and port as needed)
         livenessProbe:
           httpGet:
             path: /health
-            port: 8081
+            port: 8080
           initialDelaySeconds: 30
           periodSeconds: 10
         readinessProbe:
           httpGet:
             path: /health
-            port: 8081
+            port: 8080
           initialDelaySeconds: 5
           periodSeconds: 5
         resources:
